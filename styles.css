@@ -22,6 +22,12 @@
     }
 }
 
+@media screen and (max-width:450px) {
+    :root {
+        font-size: 19px;
+    }
+}
+
 ::selection {
     background-color: var(--accent-color);
 }
@@ -100,6 +106,23 @@ a:hover {
         "leftside response response rightside"
         "leftside back next rightside"
         "footer footer footer footer"
+    }
+}
+
+@media screen and (max-width:450px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 8vh 2fr 2fr 1fr 1fr 8vh;
+        -ms-grid-template-columns: 1fr;
+        -ms-grid-template-rows: 8vh 2fr 2fr 1fr 1fr 8vh;
+        grid-gap: .2em;
+        grid-template-areas:
+        "header header header"
+        "leftside question rightside"
+        "leftside response rightside"
+        "leftside next rightside"
+        "leftside back rightside"
+        "footer footer footer"
     }
 }
 
@@ -224,6 +247,7 @@ button {
     font-size: 1.05rem;
     font-weight: 700;
     padding: .8em 2.6em;
+    width: 18vw;
     border-radius: .1em;
     cursor: pointer;
     color: var(--text-color);
@@ -263,6 +287,27 @@ button:focus, a:hover, a:focus {
     color: var(--pickled-bluewood);
 }
 
+.disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+@media screen and (max-width:800px) {
+    button {
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .next,
+    .back {
+        margin: auto;
+    }
+
+    button {
+        width: 80vw;
+    }
+}
 /* FOOTER & SUB-GRID */
 
 .footer {
