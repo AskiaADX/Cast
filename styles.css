@@ -1,11 +1,12 @@
+/* GLOBAL */
+
 :root {
     /* VARIABLES */
     --accent-color: #00B9F2;
     --accent-color-dark: #00A3D5;
     --text-color: #ECF0F1;
-    --dark-gray: rgba(0,0,0,.15);
+    --dark-gray: rgba(0, 0, 0, .15);
     --pickled-bluewood: #283B49;
-
     box-sizing: border-box;
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
@@ -34,6 +35,17 @@ body {
     animation: bgAnimation 17s ease infinite;
 }
 
+a {
+    color: var(--text-color);
+    transition: color ease-in .15s;
+}
+
+a:hover {
+    color: white;
+}
+
+/* MAIN GRID */
+
 .container {
     display: grid;
     display: -ms-grid;
@@ -45,21 +57,14 @@ body {
     -ms-grid-template-rows: 8vh 2fr 2fr 1fr 8vh;
     grid-gap: .5em;
     grid-template-areas:
-        "header header header header"
-        "leftside question question rightside"
-        "leftside response response rightside"
-        "leftside back next rightside"
-        "footer footer footer footer"
+    "header header header header"
+    "leftside question question rightside"
+    "leftside response response rightside"
+    "leftside back next rightside"
+    "footer footer footer footer"
 }
 
-a {
-    color: var(--text-color);
-    transition: color ease-in .15s;
-}
-
-a:hover {
-    color: white;
-}
+/* HEADER */
 
 .header {
     grid-area: header;
@@ -75,9 +80,13 @@ a:hover {
     padding: 10px;
 }
 
+/* LEFT SIDEBAR */
+
 .leftside {
     grid-area: leftside;
 }
+
+/* QUESTION */
 
 .question {
     grid-area: question;
@@ -91,6 +100,8 @@ a:hover {
     color: var(--accent-color);
 }
 
+/* RESPONSE */
+
 .response {
     grid-area: response;
 }
@@ -99,7 +110,7 @@ input[type='checkbox'] {
     display: none;
 }
 
-input[type='checkbox'] + label {
+input[type='checkbox']+label {
     position: relative;
     display: flex;
     user-select: none;
@@ -111,7 +122,7 @@ input[type='checkbox'] + label {
     transition: color ease-in .15s;
 }
 
-input[type='checkbox'] + label > span {
+input[type='checkbox']+label>span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,23 +136,25 @@ input[type='checkbox'] + label > span {
     transition: all ease-in .15s;
 }
 
-input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label {
+input[type='checkbox']+label:hover, input[type='checkbox']:focus+label {
     color: #FFF;
 }
-input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span {
-    background: rgba(255,255,255,.1);
+
+input[type='checkbox']+label:hover>span, input[type='checkbox']:focus+label>span {
+    background: rgba(255, 255, 255, .1);
 }
 
-input[type='checkbox']:checked + label {
+input[type='checkbox']:checked+label {
     color: var(--accent-color);
 }
 
-input[type='checkbox']:checked + label > span {
+input[type='checkbox']:checked+label>span {
     border: .1em solid var(--accent-color);
     background-color: var(--accent-color);
-    animation: shrink-bounce ease-in cubic-bezier(.4,.0,.23,1);
+    animation: shrink-bounce ease-in cubic-bezier(.4, .0, .23, 1);
 }
-input[type='checkbox']:checked + label > span:before {
+
+input[type='checkbox']:checked+label>span:before {
     content: "";
     position: absolute;
     top: .65em;
@@ -150,12 +163,16 @@ input[type='checkbox']:checked + label > span:before {
     border-bottom: 3px solid transparent;
     transform: rotate(45deg);
     transform-origin: 0% 100%;
-    animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+    animation: checkbox-check 125ms 250ms cubic-bezier(.4, .0, .23, 1) forwards;
 }
+
+/* RIGHT SIDEBAR */
 
 .rightside {
     grid-area: rightside;
 }
+
+/* NAVIGATION CONTROLS */
 
 .next {
     grid-area: next;
@@ -173,22 +190,20 @@ button {
     transition: all ease-in .15s;
 }
 
-button:focus,
-a:hover,
-a:focus {
+button:focus, a:hover, a:focus {
     outline: none;
 }
 
 .primary {
     background-color: var(--accent-color);
     border-color: transparent;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .primary:hover {
     background-color: var(--accent-color-dark);
     color: white;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .back {
@@ -208,6 +223,8 @@ a:focus {
     color: var(--pickled-bluewood);
 }
 
+/* FOOTER & SUB-GRID */
+
 .footer {
     grid-area: footer;
     box-shadow: 0 -1px 0 0 var(--dark-gray);
@@ -216,8 +233,7 @@ a:focus {
     grid-template-columns: 80px 1fr 1fr 80px;
     -ms-grid-template-columns: 80px 1fr 1fr 80px;
     grid-gap: .5em;
-    grid-template-areas:
-        "footerLeft footerLeft footerRight footerRight";
+    grid-template-areas: "footerLeft footerLeft footerRight footerRight";
     font-size: .75rem;
 }
 
@@ -235,55 +251,85 @@ a:focus {
 }
 
 /* BG ANIMATION */
+
 @-webkit-keyframes bgAnimation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
+
 @-moz-keyframes bgAnimation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
+
 @-o-keyframes bgAnimation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
+
 @keyframes bgAnimation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
 
 /* CHECKBOX ANIMATION */
-@keyframes shrink-bounce{
-    0%{
+
+@keyframes shrink-bounce {
+    0% {
         transform: scale(1);
     }
-    33%{
+    33% {
         transform: scale(.85);
     }
-        100%{
-    transform: scale(1);
+    100% {
+        transform: scale(1);
     }
 }
-@keyframes checkbox-check{
-    0%{
+
+@keyframes checkbox-check {
+    0% {
         width: 0;
         height: 0;
         border-color: #212121;
-        transform: translate3d(0,0,0) rotate(45deg);
+        transform: translate3d(0, 0, 0) rotate(45deg);
     }
-    33%{
+    33% {
         width: .2em;
         height: 0;
-        transform: translate3d(0,0,0) rotate(45deg);
+        transform: translate3d(0, 0, 0) rotate(45deg);
     }
-    100%{
+    100% {
         width: .2em;
         height: .5em;
         border-color: #212121;
-        transform: translate3d(0,-.5em,0) rotate(45deg);
+        transform: translate3d(0, -.5em, 0) rotate(45deg);
     }
 }
