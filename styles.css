@@ -65,9 +65,9 @@ a:hover {
     width: 100vw;
     height: 100vh;
     grid-template-columns: 15vw 1fr 1fr 15vw;
-    grid-template-rows: 8vh 2fr 2fr 1fr 8vh;
+    grid-template-rows: 6vh 2fr 2fr 1fr 6vh;
     -ms-grid-template-columns: 15vw 1fr 1fr 15vw;
-    -ms-grid-template-rows: 8vh 2fr 2fr 1fr 8vh;
+    -ms-grid-template-rows: 6vh 2fr 2fr 1fr 6vh;
     grid-gap: .5em;
     grid-template-areas:
     "header header header header"
@@ -80,9 +80,9 @@ a:hover {
 @media screen and (max-width:700px) {
     .container {
         grid-template-columns: 10vw 1fr 1fr 10vw;
-        grid-template-rows: 8vh 2fr 2fr 1fr 8vh;
+        grid-template-rows: 6vh 2fr 2fr 1fr 6vh;
         -ms-grid-template-columns: 10vw 1fr 1fr 10vw;
-        -ms-grid-template-rows: 8vh 2fr 2fr 1fr 8vh;
+        -ms-grid-template-rows: 6vh 2fr 2fr 1fr 6vh;
         grid-gap: .5em;
         grid-template-areas:
         "header header header header"
@@ -96,9 +96,9 @@ a:hover {
 @media screen and (max-width:550px) {
     .container {
         grid-template-columns: 1vw 1fr 1fr 1vw;
-        grid-template-rows: 8vh 2fr 2fr 1fr 8vh;
+        grid-template-rows: 6vh 2fr 2fr 1fr 6vh;
         -ms-grid-template-columns: 1vw 1fr 1fr 1vw;
-        -ms-grid-template-rows: 8vh 2fr 2fr 1fr 8vh;
+        -ms-grid-template-rows: 6vh 2fr 2fr 1fr 6vh;
         grid-gap: .5em;
         grid-template-areas:
         "header header header header"
@@ -130,6 +130,9 @@ a:hover {
 
 .header {
     grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-size: 1.44rem;
     line-height: 3.33;
@@ -139,7 +142,10 @@ a:hover {
 }
 
 .header img {
-    padding: 10px;
+    align-self: center;
+    margin: auto;
+    max-height: 5vh;
+    max-width: 50%;
 }
 
 /* LEFT SIDEBAR */
