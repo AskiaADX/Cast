@@ -158,7 +158,7 @@ a:hover {
 
 .question {
     grid-area: question;
-    margin: auto auto 0 auto;
+    margin: auto;
 }
 
 .shortcut {
