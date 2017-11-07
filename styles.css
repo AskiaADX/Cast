@@ -26,7 +26,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.5;
-    background-image: linear-gradient(260deg, #09203f 0%, #537895 100%);
+    background-image: linear-gradient(260deg, #1C2838 0%, #325067 100%);
     background-size: 400% 400%;
     -webkit-animation: bgAnimation 17s ease infinite;
     -moz-animation: bgAnimation 17s ease infinite;
@@ -81,7 +81,7 @@ a:hover {
 
 .question {
     grid-area: question;
-    margin: auto;
+    margin: auto auto 0 auto;
 }
 
 .shortcut {
