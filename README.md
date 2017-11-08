@@ -6,7 +6,7 @@ This demo ADP makes use of [CSS grid](https://css-tricks.com/snippets/css/comple
 
 It provides:
 
-- a set of CSS variables for colors
+- a set of CSS variables for colors and font size variants
 - an animated background gradient (that can be deactivated)
 - media queries to manage generic content at most resolutions
 - image or survey name in title
