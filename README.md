@@ -12,7 +12,7 @@ It provides:
 - image or survey name in title
 - adaptive base font size
 - question shortcut display above question caption
-- footer with up to two containers for secondary / optional text/links
+- footer with up to two containers for secondary / optional text/ links
 
 _Note 1: support for CSS grids is currently approx 75%: Edge 16+, Firefox 52+, Chrome 60+, Safari 10.1+ and Opera 48+ only._
 
